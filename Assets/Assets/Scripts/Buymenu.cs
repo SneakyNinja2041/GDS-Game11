@@ -38,7 +38,6 @@ public class Buymenu : MonoBehaviour
     {
         if (level.level >= 1)
         {
-            level.level--;
             parkButton.SetActive(true);
             Destroy(park.gameObject);
         }
@@ -48,7 +47,6 @@ public class Buymenu : MonoBehaviour
     {
         if (level.level >= 3)
         {
-            level.level -= 3;
             desertButton.SetActive(true);
             Destroy(desert.gameObject);
         }
@@ -59,7 +57,6 @@ public class Buymenu : MonoBehaviour
     {
         if (level.level >= 7)
         {
-            level.level -= 7;
             fallButton.SetActive(true);
             Destroy(fall.gameObject);
         }
@@ -69,7 +66,6 @@ public class Buymenu : MonoBehaviour
     {
         if (level.level >= 10)
         {
-            level.level -= 10;
             hellButton.SetActive(true);
             Destroy(hell.gameObject);
         }

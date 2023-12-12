@@ -13,10 +13,14 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject expBar;
     EXPBar exp;
 
+    [SerializeField] GameObject dropper;
+    Training training;
+
     void Start()
     {
         money = startMoney;
         exp = expBar.GetComponent<EXPBar>();
+        training = dropper.GetComponent<Training>();
     }
 
     void Update()
@@ -28,10 +32,19 @@ public class PlayerStats : MonoBehaviour
     {
         if (other.CompareTag("Money"))
         {
-            exp.ExpUp();
+            training.currentCoinsCollected++;
 
             money += 2;
         }
+
+        if (other.CompareTag("Rock"))
+        {
+            // tell the player that they were hit
+            //wait a bit to send them back, to show stats
+
+            training.isDodgeTraining = false;
+        }
+
 
     }
 }
