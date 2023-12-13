@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
     public static int money;
     public int startMoney = 0;
 
+
     public TextMeshProUGUI moneyText;
 
     [SerializeField] GameObject expBar;
@@ -42,7 +43,8 @@ public class PlayerStats : MonoBehaviour
             // tell the player that they were hit
             //wait a bit to send them back, to show stats
 
-            training.isDodgeTraining = false;
+            training.trainingUI.SetActive(true);
+            training.spawnDelay = 50;
         }
 
 

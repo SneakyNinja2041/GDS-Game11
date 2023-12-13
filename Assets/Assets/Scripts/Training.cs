@@ -8,6 +8,9 @@ public class Training : MonoBehaviour
     public GameObject badItem;
     private GameObject itemToSpawn;
 
+    public GameObject player;
+
+    public GameObject trainingUI;
     public GameObject ui;
 
     public float spawnDelay;
@@ -31,6 +34,7 @@ public class Training : MonoBehaviour
         currentSpawnDelay = spawnDelay;
         currentCoinsCollected = coinsCollected;
         isDodgeTraining = false;
+        
     }
 
     private void GetItem()
@@ -57,6 +61,7 @@ public class Training : MonoBehaviour
          if (isDodgeTraining == true)
          {
             ui.SetActive(false);
+            
 
             currentSpawnDelay -= Time.deltaTime;
             if (currentSpawnDelay < 0)
@@ -76,9 +81,17 @@ public class Training : MonoBehaviour
 
          if (isDodgeTraining == false)
          {
-            currentSpawnDelay = 10;
+            currentSpawnDelay = 5;
             currentCoinsCollected = 0;
             ui.SetActive(true);
+            trainingUI.SetActive(false);
          }
     }
+
+    public void TrainingButton()
+    {
+        isDodgeTraining = false;
+        player.transform.position = new Vector3(0.6f, -3.1f, 0);
+    }
+
 }

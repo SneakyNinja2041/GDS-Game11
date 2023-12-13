@@ -6,6 +6,7 @@ public class CameraFollo : MonoBehaviour
 {
     public Transform target1;
     public Transform target2;
+    public Transform target3;  
 
     public float smoothing = 5f;
     public Vector3 offset = new Vector3(0f, 0f, 0f);
@@ -13,10 +14,13 @@ public class CameraFollo : MonoBehaviour
     [SerializeField] GameObject dropper;
     Training training;
 
+    [SerializeField] GameObject fight;
+    ChallengeSwitch challenge;
+
     void Start()
     {
         training = dropper.GetComponent<Training>();
-
+        challenge = fight.GetComponent<ChallengeSwitch>();
     }
 
 
@@ -26,6 +30,11 @@ public class CameraFollo : MonoBehaviour
         if (training.isDodgeTraining == true)
         {
             Vector3 targetPosition = target2.position + offset;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.fixedDeltaTime);
+        }
+        if (challenge.isChallenge == true)
+        {
+            Vector3 targetPosition = target3.position + offset;
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.fixedDeltaTime);
         }
         else
