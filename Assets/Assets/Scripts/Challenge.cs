@@ -69,11 +69,8 @@ public class Challenge : MonoBehaviour
 
 
 
-    public void Challenge1()
-    {
-        
-
-
+    public void Challenge()
+    {   
         if(levels.level >= enemyStat)
         {
             StartCoroutine (WaitA(fanfare));
@@ -84,44 +81,6 @@ public class Challenge : MonoBehaviour
         }
     }
 
-    private void Challenge2()
-    {
-
-
-
-
-
-
-    }
-
-    private void Challenge3()
-    {
-
-
-
-
-
-    }
-
-    private void Challenge4()
-    {
-
-
-
-
-
-
-    }
-
-    private void Challenge5()
-    {
-
-
-
-
-
-
-    }
 
     private IEnumerator WaitA(float delay)
     {
@@ -156,11 +115,6 @@ public class Challenge : MonoBehaviour
             SetChallenge5= false;
 
         }
-
-
-
-
-
 
     }
 
