@@ -36,7 +36,7 @@ public class Buymenu : MonoBehaviour
 
     public void BuyPark()
     {
-        if (level.level >= 1)
+        if (level.level >= 5)
         {
             parkButton.SetActive(true);
             Destroy(park.gameObject);
@@ -45,7 +45,7 @@ public class Buymenu : MonoBehaviour
 
     public void BuyDesert()
     {
-        if (level.level >= 3)
+        if (level.level >= 15)
         {
             desertButton.SetActive(true);
             Destroy(desert.gameObject);
@@ -55,7 +55,7 @@ public class Buymenu : MonoBehaviour
 
     public void BuyFall()
     {
-        if (level.level >= 7)
+        if (level.level >= 25)
         {
             fallButton.SetActive(true);
             Destroy(fall.gameObject);
@@ -64,7 +64,7 @@ public class Buymenu : MonoBehaviour
 
     public void BuyHell()
     {
-        if (level.level >= 10)
+        if (level.level >= 35)
         {
             hellButton.SetActive(true);
             Destroy(hell.gameObject);
@@ -75,9 +75,9 @@ public class Buymenu : MonoBehaviour
 
     public void BuyTophat()
     {
-        if (PlayerStats.money >= 5)
+        if (PlayerStats.money >= 10)
         {
-            PlayerStats.money -= 5;
+            PlayerStats.money -= 10;
             tophatButton.SetActive(true);
             Destroy(tophat.gameObject);
         }
@@ -85,9 +85,9 @@ public class Buymenu : MonoBehaviour
 
     public void BuyMonacle()
     {
-        if (PlayerStats.money >= 10)
+        if (PlayerStats.money >= 25)
         {
-            PlayerStats.money -= 10;
+            PlayerStats.money -= 25;
             monacleButton.SetActive(true);
             Destroy(monacle.gameObject);
         }
@@ -95,9 +95,9 @@ public class Buymenu : MonoBehaviour
 
     public void BuyAngel()
     {
-        if (PlayerStats.money >= 25)
+        if (PlayerStats.money >= 50)
         {
-            PlayerStats.money -= 25;
+            PlayerStats.money -= 50;
             angelButton.SetActive(true);
             Destroy(angel.gameObject);
         }
@@ -105,9 +105,9 @@ public class Buymenu : MonoBehaviour
 
     public void BuyDevil()
     {
-        if (PlayerStats.money >= 40)
+        if (PlayerStats.money >= 75)
         {
-            PlayerStats.money -= 40;
+            PlayerStats.money -= 75;
             devilButton.SetActive(true);
             Destroy(devil.gameObject);
         }
@@ -115,9 +115,9 @@ public class Buymenu : MonoBehaviour
 
     public void BuyCrown()
     {
-        if (PlayerStats.money >= 50)
+        if (PlayerStats.money >= 150)
         {
-            PlayerStats.money -= 50;
+            PlayerStats.money -= 150;
             crownButton.SetActive(true);
             Destroy(crown.gameObject);
         }

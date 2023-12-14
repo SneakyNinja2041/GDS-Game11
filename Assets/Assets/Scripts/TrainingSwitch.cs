@@ -12,6 +12,8 @@ public class TrainingSwitch : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip clip;
 
+    
+
     void Start()
     {
         training = dropper.GetComponent<Training>();
@@ -22,7 +24,7 @@ public class TrainingSwitch : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             training.isDodgeTraining = true;
-            player.transform.position = new Vector3(-31, -3.1f, 0);
+            player.transform.position = new Vector3(-26.7f, -3.1f, 0);
             audioSource.Stop();
             audioSource.clip = clip;
             audioSource.Play();

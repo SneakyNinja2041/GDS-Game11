@@ -69,7 +69,7 @@ public class Challenge : MonoBehaviour
     {
         if (SetChallenge1 == true)
         {
-            enemyStat = 5;
+            enemyStat = 10;
             challenge1.SetActive(true);
         }
         else
@@ -78,7 +78,7 @@ public class Challenge : MonoBehaviour
         }
         if (SetChallenge2 == true)
         {
-            enemyStat = 10;
+            enemyStat = 20;
             challenge2.SetActive(true);
         }
         else
@@ -87,7 +87,7 @@ public class Challenge : MonoBehaviour
         }
         if(SetChallenge3 == true)
         {
-            enemyStat = 15;
+            enemyStat = 30;
             challenge3.SetActive(true);
         }
         else
@@ -96,7 +96,7 @@ public class Challenge : MonoBehaviour
         }
         if(SetChallenge4 == true)
         {
-            enemyStat = 20;
+            enemyStat = 40;
             challenge4.SetActive(true);
         }
         else
@@ -105,7 +105,7 @@ public class Challenge : MonoBehaviour
         }
         if(SetChallenge5 == true)
         {
-            enemyStat = 25;
+            enemyStat = 50;
             challenge5.SetActive(true);
         }
         else

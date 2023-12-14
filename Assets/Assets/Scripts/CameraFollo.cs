@@ -29,7 +29,7 @@ public class CameraFollo : MonoBehaviour
            
         if (training.isDodgeTraining == true)
         {
-            transform.position = new Vector3(-34f, 0, -1f);
+            transform.position = new Vector3(-31.5f, 0, -1f);
         }
         if (challenge.isChallenge == true)
         {

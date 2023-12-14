@@ -105,8 +105,8 @@ public class Training : MonoBehaviour
             {
                 GetItem();
                 currentSpawnDelay = spawnDelay;
-                var randomPosition = Random.Range(-40f, -20f);
-                Instantiate(itemToSpawn, new Vector3(randomPosition, 13, 0), Quaternion.identity);
+                var randomPosition = Random.Range(-36f, -21f);
+                Instantiate(itemToSpawn, new Vector3(randomPosition, 14.3f, 0), Quaternion.identity);
                 audioSource.Play();
             }
          }
@@ -127,6 +127,7 @@ public class Training : MonoBehaviour
         isDodgeTraining = false;
         player.transform.position = new Vector3(0.6f, -3.1f, 0);
         currentCoinsCollected = 0;
+        spawnDelay = 3;
         audioBgSource.Stop();
         audioBgSource.clip = bgMusic;
         audioBgSource.Play();
