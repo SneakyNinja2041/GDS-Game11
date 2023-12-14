@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollo : MonoBehaviour
 {
     public Transform target1;
-    public Transform target2;
+    
     public Transform target3;  
 
     public float smoothing = 5f;
@@ -29,8 +29,8 @@ public class CameraFollo : MonoBehaviour
            
         if (training.isDodgeTraining == true)
         {
-            Vector3 targetPosition = target2.position + offset;
-            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.fixedDeltaTime);
+
+            transform.position = new Vector3(-33f, 0, -1f);
         }
         if (challenge.isChallenge == true)
         {

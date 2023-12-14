@@ -25,10 +25,11 @@ public class EXPBar : MonoBehaviour
 
     void Update()
     {
-        if (exp == maxExp)
+        if (exp >= maxExp)
         {
             exp = 0;
             level++;
+            slider.value = exp;
         }
 
 

@@ -33,18 +33,15 @@ public class PlayerStats : MonoBehaviour
     {
         if (other.CompareTag("Money"))
         {
+            money++;
             training.currentCoinsCollected++;
-
-            money += 2;
+            exp.ExpUp();
         }
 
         if (other.CompareTag("Rock"))
         {
-            // tell the player that they were hit
-            //wait a bit to send them back, to show stats
-
             training.trainingUI.SetActive(true);
-            training.spawnDelay = 50;
+            Time.timeScale = 0f;
         }
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Training : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Training : MonoBehaviour
     private GameObject itemToSpawn;
 
     public GameObject player;
+    PlayerStats playerStats;
+
+    public TextMeshProUGUI collectedText;
 
     public GameObject trainingUI;
     public GameObject ui;
@@ -34,6 +38,7 @@ public class Training : MonoBehaviour
         currentSpawnDelay = spawnDelay;
         currentCoinsCollected = coinsCollected;
         isDodgeTraining = false;
+        playerStats = player.GetComponent<PlayerStats>();
         
     }
 
@@ -50,18 +55,47 @@ public class Training : MonoBehaviour
         {
             itemToSpawn = goodItem;
             audioSource.clip = goodAudio;
+            
         }
 
     }
 
     void Update()
     {
+        collectedText.text = "Coins Earned: " + currentCoinsCollected.ToString();
+        if (currentCoinsCollected > 5)
+        {
+            spawnDelay = 3f;
+        }
 
-
-         if (isDodgeTraining == true)
+        if (currentCoinsCollected >= 5)
+        {
+            spawnDelay = 2.5f;
+        }
+        if (currentCoinsCollected >= 10)
+        {
+            spawnDelay = 2;
+        }
+        if (currentCoinsCollected >= 15)
+        {
+            spawnDelay = 1.5f;
+        }
+        if (currentCoinsCollected >= 20)
+        {
+            spawnDelay = 1;
+        }
+        if (currentCoinsCollected >= 25)
+        {
+            spawnDelay = 0.5f;
+        }
+        if (currentCoinsCollected >= 30)
+        {
+            spawnDelay = 0.1f;
+        }
+        if (isDodgeTraining == true)
          {
             ui.SetActive(false);
-            
+        
 
             currentSpawnDelay -= Time.deltaTime;
             if (currentSpawnDelay < 0)
@@ -72,10 +106,6 @@ public class Training : MonoBehaviour
                 Instantiate(itemToSpawn, new Vector3(randomPosition, 13, 0), Quaternion.identity);
                 audioSource.Play();
             }
-
-            //i want the items to drop more frequently as time goes on
-
-
          }
 
 
@@ -90,8 +120,10 @@ public class Training : MonoBehaviour
 
     public void TrainingButton()
     {
+        Time.timeScale = 1f;
         isDodgeTraining = false;
         player.transform.position = new Vector3(0.6f, -3.1f, 0);
+        currentCoinsCollected = 0;
     }
 
 }

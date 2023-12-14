@@ -8,11 +8,34 @@ public class ChallengeSwitch : MonoBehaviour
 
     public bool isChallenge;
 
+    public GameObject menuUI;
+
+    [SerializeField] GameObject challenges;
+    Challenge chal;
+
+    private void Start()
+    {
+        chal = challenges.GetComponent<Challenge>();    
+    }
+
+    private void Update()
+    {
+        if (isChallenge == true)
+        {
+            menuUI.SetActive(false);
+        }
+        else
+        {
+            menuUI.SetActive(true);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         isChallenge = true;
-        player.transform.position = new Vector3(25.25f, -3.1f, 0);
-        //freeze player movement
+        player.transform.position = new Vector3(26f, -1.5f, 0);
+        chal.Challenge1();
+        
     }
 
 
