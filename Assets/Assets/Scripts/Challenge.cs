@@ -35,7 +35,9 @@ public class Challenge : MonoBehaviour
     public bool SetChallenge4;
     public bool SetChallenge5;
 
-  
+    public AudioSource audioSource;
+    public AudioClip bgMusic;
+    public AudioClip challengeMusic;
 
     private int enemyStat;
 
@@ -118,8 +120,12 @@ public class Challenge : MonoBehaviour
 
 
     public void Challenge1()
-    {   
-        if(levels.level >= enemyStat)
+    {
+        audioSource.Stop();
+        audioSource.clip = challengeMusic;
+        audioSource.Play();
+
+        if (levels.level >= enemyStat)
         {
             StartCoroutine (WaitA(fanfare));
         }
@@ -230,7 +236,9 @@ public class Challenge : MonoBehaviour
             SetChallenge2 = true;
 
         }
-
+        audioSource.Stop();
+        audioSource.clip = bgMusic;
+        audioSource.Play();
     }
 
     private IEnumerator WaitB(float delay)
@@ -313,6 +321,9 @@ public class Challenge : MonoBehaviour
         }
         player.transform.position = new Vector3(-1, -3.16f, 0);
         spotlightLose.SetActive(false);
+        audioSource.Stop();
+        audioSource.clip = bgMusic;
+        audioSource.Play();
     }
 
 }

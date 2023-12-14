@@ -9,6 +9,8 @@ public class TrainingSwitch : MonoBehaviour
 
     public GameObject player;
 
+    public AudioSource audioSource;
+    public AudioClip clip;
 
     void Start()
     {
@@ -21,6 +23,9 @@ public class TrainingSwitch : MonoBehaviour
         {
             training.isDodgeTraining = true;
             player.transform.position = new Vector3(-31, -3.1f, 0);
+            audioSource.Stop();
+            audioSource.clip = clip;
+            audioSource.Play();
         }
 
 

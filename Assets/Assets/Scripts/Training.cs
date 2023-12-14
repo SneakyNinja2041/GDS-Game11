@@ -32,6 +32,9 @@ public class Training : MonoBehaviour
 
     public AudioSource audioSource;
 
+    public AudioSource audioBgSource;
+    public AudioClip bgMusic;
+
 
     void Start()
     {
@@ -84,11 +87,11 @@ public class Training : MonoBehaviour
         {
             spawnDelay = 1;
         }
-        if (currentCoinsCollected >= 25)
+        if (currentCoinsCollected >= 30)
         {
             spawnDelay = 0.5f;
         }
-        if (currentCoinsCollected >= 30)
+        if (currentCoinsCollected >= 40)
         {
             spawnDelay = 0.1f;
         }
@@ -124,6 +127,9 @@ public class Training : MonoBehaviour
         isDodgeTraining = false;
         player.transform.position = new Vector3(0.6f, -3.1f, 0);
         currentCoinsCollected = 0;
+        audioBgSource.Stop();
+        audioBgSource.clip = bgMusic;
+        audioBgSource.Play();
     }
 
 }
